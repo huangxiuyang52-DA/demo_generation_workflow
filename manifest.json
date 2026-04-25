@@ -1,0 +1,17 @@
+{
+  "name": "demo_generation_workflow_skill",
+  "version": "2.1.0",
+  "files": [
+    ".gitignore",
+    "README.md",
+    "SKILL.md",
+    "examples/generated_output_notes.md",
+    "examples/normalized_requirement_example_app.md",
+    "examples/normalized_requirement_example_web.md",
+    "examples/raw_requirement_example_app.md",
+    "examples/raw_requirement_example_web.md",
+    "index.json",
+    "manifest.json",
+    "skill.json"
+  ]
+}

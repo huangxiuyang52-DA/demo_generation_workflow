@@ -1,0 +1,66 @@
+{
+  "name": "demo_generation_workflow",
+  "display_name": "Demo Generation Workflow",
+  "version": "2.1.0",
+  "description": "A workflow-driven skill for converting raw enterprise-system requirements into an App/PDA demo or a Web demo after a confirmation gate.",
+  "language": "zh-TW",
+  "skill_type": "workflow",
+  "entrypoint": "stage_1_request_raw_requirements",
+  "confirmation_required": true,
+  "supported_demo_types": [
+    "app_pda_demo",
+    "web_demo"
+  ],
+  "supported_output_formats": [
+    "react_single_file",
+    "html_single_file"
+  ],
+  "roles": [
+    "system_implementation_consultant",
+    "enterprise_product_designer",
+    "frontend_engineer"
+  ],
+  "domains": [
+    "MES",
+    "WMS",
+    "ERP",
+    "instrument_management",
+    "enterprise_internal_systems"
+  ],
+  "stages": [
+    {
+      "id": "stage_1_request_raw_requirements",
+      "name": "Request Raw Requirements",
+      "output": "raw_requirement_prompt"
+    },
+    {
+      "id": "stage_2_normalize_requirements",
+      "name": "Normalize Requirements",
+      "output": "structured_requirement_brief"
+    },
+    {
+      "id": "stage_3_generate_demo",
+      "name": "Generate Demo",
+      "requires_confirmation": true,
+      "output": "interactive_demo_artifact"
+    }
+  ],
+  "routes": {
+    "app_pda_demo": {
+      "artifact_type": "react_single_file",
+      "layout": "mobile_portrait",
+      "interaction_model": "workflow_steps"
+    },
+    "web_demo": {
+      "artifact_type": "html_single_file",
+      "layout": "wide_screen_desktop",
+      "interaction_model": "search_table_modal"
+    }
+  },
+  "guardrails": [
+    "do_not_generate_before_confirmation",
+    "use_traditional_chinese",
+    "use_enterprise_domain_terminology",
+    "fill_reasonable_defaults_when_missing"
+  ]
+}

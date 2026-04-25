@@ -1,0 +1,45 @@
+{
+  "registry_version": "1.0",
+  "type": "skill_index",
+  "name": "demo_generation_workflow",
+  "display_name": "Demo Generation Workflow",
+  "version": "2.1.0",
+  "summary": "Workflow skill for normalizing enterprise-system requirements and generating either App/PDA demos or Web admin demos after confirmation.",
+  "entrypoint": "SKILL.md",
+  "metadata_file": "skill.json",
+  "manifest_file": "manifest.json",
+  "readme_file": "README.md",
+  "language": "zh-TW",
+  "routes": [
+    {
+      "id": "app_pda_demo",
+      "label": "App / PDA Demo",
+      "artifact_type": "react_single_file",
+      "layout": "mobile_portrait",
+      "interaction_model": "workflow_steps"
+    },
+    {
+      "id": "web_demo",
+      "label": "Web Demo",
+      "artifact_type": "html_single_file",
+      "layout": "wide_screen_desktop",
+      "interaction_model": "search_table_modal"
+    }
+  ],
+  "capabilities": [
+    "normalize_requirements",
+    "recommend_demo_type",
+    "generate_app_pda_demo",
+    "generate_web_demo"
+  ],
+  "tags": [
+    "demo",
+    "workflow",
+    "enterprise-ui",
+    "wms",
+    "mes",
+    "erp",
+    "pda",
+    "web-admin"
+  ]
+}

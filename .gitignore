@@ -1,0 +1,34 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs
+*.log
+
+# Build / export artifacts
+dist/
+build/
+*.zip
+
+# Local temp files
+tmp/
+temp/
+.cache/
+
+# OS / misc
+*.bak
+*.tmp
